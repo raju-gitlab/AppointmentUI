@@ -1,0 +1,31 @@
+<mat-card>
+
+    <ng-container *ngFor="let Items of ProductDetails">
+        <div style="display: flex;justify-content: space-between;">
+            <div class="card" style="width: 18rem;left: 20px;">
+                <div>
+                    <img [src]=Items.ProductImage class="card-img-top" alt="...">
+                </div>
+                <div style="display: flex;margin: 10px;">
+                    <button type="button" class="btn btn-primary"
+                        style="margin-right: 20px; background-color: sandybrown;border: none;outline: none;">Add In
+                        Cart</button>
+                    <button type="button" class="btn btn-primary"
+                        style="background-color:yellowgreen;border: none;outline: none;width: 50%;">Order</button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;right: 50px;">
+                <div class="card-header">
+                    Specification
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{Items.ProductName}}</li>
+                    <li class="list-group-item">{{Items.ProductType}}</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+            </div>
+        </div>
+
+    </ng-container>
+</mat-card>

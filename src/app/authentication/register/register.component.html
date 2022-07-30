@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Register Form</title>
+</head>
+<body>
+    <div>
+        <h1>
+            Register Your Account
+        </h1>
+    </div>
+    
+    <form [formGroup]="RegisterFrom" (ngSubmit)="submitForm()">
+        <mat-vertical-stepper>
+            <mat-step label="Put Your Details">
+                <div class="AlignFormControlPosition">
+                    <div class="input-group flex-nowrap fieldwidth">
+                        <span class="input-group-text" id="addon-wrapping"><mat-icon>badge</mat-icon></span>
+                        <input type="text" formControlName="Name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" required>
+                      </div>  
+                    <div class="input-group flex-nowrap fieldwidth">
+                        <span class="input-group-text" id="addon-wrapping"><mat-icon>alternate_email</mat-icon></span>
+                        <input type="email" formControlName="Email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping" required>
+                      </div>
+                      <div class="input-group flex-nowrap fieldwidth">
+                        <span class="input-group-text" id="addon-wrapping"><mat-icon>vpn_key</mat-icon></span>
+                        <input type="text" formControlName="Password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                      <div class="input-group flex-nowrap fieldwidth">
+                        <span class="input-group-text" id="addon-wrapping"><mat-icon>call</mat-icon></span>
+                        <input type="text" formControlName="ContactNumber" class="form-control" placeholder="Contact Number" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+                <div>
+                    <button type="submit" mat-button matStepperNext class="btn btn-primary navigationbutton" style="font-family: roboto;">Create Account</button>
+                    <!-- <button type="button" mat-button matStepperNext class="btn btn-primary navigationbutton" style="font-family: roboto;">Next</button> -->
+                </div> 
+            </mat-step>
+            <!-- <mat-step label="step2">
+                <div *ngIf="filePath && filePath !== ''" class="PreviewImageAlign">
+                    <img [src]="filePath" class="Previewimage">
+                  </div>
+                <input type="file" class="form-control uploadImageButton" accept="image/*" (change)="imagePreview($event)">
+                <div>
+                    <button type="button" mat-button matStepperNext class="btn btn-primary navigationbutton" style="font-family: roboto;">Previous</button>
+                    
+                </div> 
+            </mat-step> -->
+        </mat-vertical-stepper>
+    </form>
+    
+
+    
+</body>
+</html>

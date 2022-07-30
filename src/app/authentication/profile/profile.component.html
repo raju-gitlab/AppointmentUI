@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Register Form</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            Your Profile
+        </h1>
+    </div>
+    <div>
+        <p style="text-align: center;">Profile Name : <b><i><u>{{ProfileName}}</u></i></b> and  User Status : <b><i><u>{{Status}}</u></i></b> </p>
+    </div>
+    <form [formGroup]="RegisterFrom" (ngSubmit)="submitForm()">
+        <mat-vertical-stepper>
+            <mat-step label="Update your details">
+                <div class="AlignFormControlPosition">
+                    <div class="input-group flex-nowrap fieldwidth" style="width: 40%;">
+                        <span class="input-group-text" id="addon-wrapping">
+                            <mat-icon>badge</mat-icon>
+                        </span>
+                        <input type="text" formControlName="Name" class="form-control" placeholder="Name"
+                            aria-label="Username" aria-describedby="addon-wrapping" required>
+                    </div>
+                    <br>
+                    <div class="input-group flex-nowrap fieldwidth" style="width: 40%;">
+                        <span class="input-group-text" id="addon-wrapping">
+                            <mat-icon>vpn_key</mat-icon>
+                        </span>
+                        <input type="text" formControlName="Password" class="form-control" placeholder="Password"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+
+                </div>
+                <div>
+                    <button type="submit" mat-button matStepperNext class="btn btn-primary navigationbutton"
+                        style="font-family: roboto;  position: relative;left: 27%;top: 15px;">Update Profile</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+    </form>
+
+    <div class="status">
+        <h5>Update Status</h5>
+        <mat-form-field appearance="outline">
+            <mat-label>Your Status</mat-label>
+            <mat-select>
+                <mat-option value="valid" (click)="updateProfileStatus('true')">Active</mat-option>
+                <mat-option value="invalid" (click)="updateProfileStatus('false')">Keep Away</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+</body>
+
+</html>

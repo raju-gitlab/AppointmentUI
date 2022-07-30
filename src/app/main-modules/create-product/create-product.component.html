@@ -1,0 +1,73 @@
+<!-- <div class="card">
+    <div class="card-body" style="display: flex;justify-content: space-between;">
+        <div class="card">
+            <div class="card-header">
+                CreateProduct
+            </div>
+            <div class="card-body">
+                <form [formGroup]="CrateProductFrom" (ngSubmit)="SubmitCrateProductForm()">
+                    <div class="form-row">
+                        <div class="col-6">
+                            <input type="text" class="form-control" formControlName="ProductName" placeholder="Product Name">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" formControlName="ProductbasePrice" placeholder="Product Price">
+                        </div>
+                    </div><br>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <input type="number" class="form-control" formControlName="ProductQuantity" placeholder="Product Quantity">
+                        </div>
+                        <div class="col-6">
+                            <select class="form-control" name="ProductTypeVal" id="PTID" formControlName="ProductType">
+                                <option value="undefined" selected disabled>Select option</option>
+                                <option *ngFor="let types of productTypes" value="{{types.TypeGuid}}">
+                                    {{types.TypeName}}
+                                </option>
+                            </select>
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <div>
+                            <input type="text" formControlName="ProductImage" class="form-control" [(ngModel)]='ProductImagePath' name="Pic" placeholder="Image Path">
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;height: 18rem;">
+            <div class="card-body">
+                <img [src]="ProductImagePath" alt="" style="height: 100%;width: 100%;">
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="card">
+    <div class="card-header">
+        Take Appointment
+    </div>
+    <div class="card-body">
+        <form [formGroup]="CrateProductFrom" (ngSubmit)="SubmitCrateProductForm()">
+            <div class="form-row">
+                <div class="col-6">
+                    <input type="text" class="form-control" formControlName="title" placeholder="Appointment title">
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" formControlName="AppountmentDate" placeholder="Appointment date">
+                </div>
+            </div><br>
+            <div class="form-row">
+                <div class="col-6">
+                    <textarea type="text" formControlName="agenda" class="form-control" placeholder="Your Agenda"></textarea>
+                </div>
+                <div class="col-6">
+                    <input type="text" formControlName="guest" class="form-control" placeholder="Guest Id">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" style="position: relative; left: 50%;">Submit Request</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.AlignFormControlPosition {
+    position: relative;
+    left: 12%;
+}
+
+.status  {
+    width: 23%;
+position: absolute;
+left: 67%;
+top: 35%;
+}

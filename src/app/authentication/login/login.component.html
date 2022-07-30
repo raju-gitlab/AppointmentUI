@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <form class="example-form align-from" [formGroup]="LoginForm" (ngSubmit)="onFromsubmit()">
+    <div class="card">
+      <h3 style="text-align: center;">Login</h3>
+      <hr>
+      <div class="card-body">
+        <mat-form-field class="example-full-width example-form-field">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="Email" matInput [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com" [(ngModel)]="value">
+          <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-form-field" style="width: 100%;">
+          <mat-label>Your Password</mat-label>
+          <input matInput type="password" formControlName="Password" aria-describedby="Password">
+        </mat-form-field>
+
+      </div>
+      <div class="example-button-row" style="padding-bottom: 10px;position: relative; left: 42%;">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </form>
+  <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openWindowCustomClass(content)">Modal with window custom class</button>
+    <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+      </ng-template> -->
+
+  <router-outlet></router-outlet>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+.fieldwidth
+{
+    width: 50%;
+    padding-bottom: 10px;
+
+}
+.AlignFormControlPosition
+{
+    position: relative;
+    top: 0;
+    left: 75%;
+    transform: translate(-50%, 0%);
+}
+.AlignNavigationButton
+{
+    
+}
+.navigationbutton
+{
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.Previewimage
+{
+    height: 175px;
+    border-radius: 100%;
+}
+
+.PreviewImageAlign
+{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.uploadImageButton{
+    position: relative;
+    top: 0;
+    left: 58%;
+    transform: translate(-50%, 10px);
+    width: 50%;
+}

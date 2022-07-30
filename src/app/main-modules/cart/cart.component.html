@@ -1,0 +1,41 @@
+<!-- <ng-container *ngFor="let items of cartItems">
+    <mat-card>
+        <p>Product Name : {{items.ProductName}}</p>
+        <p>productBasePrice : {{items.ProductbasePrice}}</p>
+        <p>currentQuantity : {{items.ProductQuantity}}</p>
+        <p>productGuid : {{items.ProductGuid}}</p>
+        <button type="button" class="btn btn-primary" style="margin-right: 10px;">Order</button>
+        <button type="button" class="btn btn-primary" style="margin-right: 10px;">Remove From Cart</button>
+        <a routerLink="/HomePage" class="btn btn-primary">Back to Home</a>
+    </mat-card>
+</ng-container> -->
+<div class="card">
+    <div class="card-body" style="display: flex;justify-content: space-between;">
+        <div class="card" style="width: 75%;">
+            <div class="card-body">
+                    <ng-container *ngFor="let items of cartItems">
+                        <mat-card>
+                            <p>ProductName : {{items.ProductName}}</p>
+                            <p>productBasePrice : {{items.ProductbasePrice}}</p>
+                            <p>currentQuantity : {{items.ProductQuantity}}</p>
+                            <p>productGuid : {{items.ProductGuid}}</p>
+                            <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="RemoveFromCart(items.ProductGuid)">Remove From Cart</button>
+                            <a routerLink="/HomePage" class="btn btn-primary">Back to Home</a>
+                        </mat-card><br>
+                    </ng-container>
+                    <button type="submit" class="btn btn-primary" style="margin-right: 10px;" *ngIf="checkCartItemQuantity() === 1">Order</button>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;height: 18rem; position: fixed;top: 40%; left: 85%; transform: translate(-50%,-50%);">
+            <div class="card-body">
+                <p>Total Items : {{TotalcartItems}} </p>
+                <ng-container *ngFor="let Priceitems of cartItems; index as i">
+                    <p> Prices({{i + 1}}) : {{Priceitems.ProductbasePrice}} * {{Priceitems.ProductQuantity}} = {{Priceitems.ProductbasePrice * Priceitems.ProductQuantity}}</p>
+                </ng-container>
+                <hr>
+                <p>Total Amount : {{Totalcount}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
